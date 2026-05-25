@@ -1,51 +1,58 @@
-# 마인크래프트 모드팩서버 전용구동기
+# T2ModLauncher
 
-마인크래프트 모드팩 서버를 Windows 환경에서 쉽게 설치하고 실행하기 위한 전용 구동기입니다.
+**Windows 전용 마인크래프트 모드팩 서버 구동기**
 
-복잡한 명령어 입력 없이, 모드팩 서버용 ZIP URL을 입력하고 설치 버튼을 누르면 서버 파일을 다운로드하고 압축 해제한 뒤 실행 가능한 서버 파일을 자동으로 탐색합니다.
+T2ModLauncher는 마인크래프트 모드팩 서버를 조금 더 쉽게 설치하고 실행하기 위해 만든 간단한 서버 구동기입니다.  
+서버용 모드팩 ZIP URL을 입력하면 다운로드, 압축 해제, Java 준비, 서버 실행까지 한 번에 진행할 수 있습니다.
 
 ---
 
 ## 주요 기능
 
-- 모드팩 서버용 ZIP URL 직접 입력
-- ZIP 파일 자동 다운로드
-- 서버 설치 폴더 자동 생성
-- ZIP 압축 해제
-- `run.bat`, `start.bat`, `launch.bat`, `server.jar`, `neoforge*.jar`, `forge*.jar` 자동 탐색
-- Java 8 / 17 / 21 / 25 런타임 선택 지원
-- 메모리 할당 Slider 지원
+- 모드팩 서버용 ZIP 파일 다운로드
+- 서버 파일 자동 압축 해제
+- Minecraft 버전 선택
+- Forge / NeoForge / Fabric 서버 타입 선택
+- Java 8 / 17 / 21 / 25 자동 다운로드 지원
 - 서버 실행 / 중지 / 재시작
-- 실시간 서버 로그 출력
-- Windows 방화벽 TCP 포트 자동 등록
-- 설정 저장 / 불러오기
+- 메모리 할당 슬라이더
+- Windows 방화벽 TCP 25565 규칙 추가
+- 실시간 로그 표시 및 로그 저장
+- 단일 EXE 배포
 
 ---
 
-## 지원 환경
+## 사용 방법
 
-- 운영체제: Windows
-- 권장 실행 방식: 관리자 권한 실행
-- 개발 기준: .NET 8 WPF
-- 기본 서버 포트: TCP 25565
+1. GitHub Releases에서 최신 버전의 `T2ModLauncher.zip`을 다운로드합니다.
+2. ZIP 파일을 원하는 위치에 압축 해제합니다.
+3. `T2ModLauncher.exe`를 실행합니다.
+4. Minecraft 버전, 서버 타입, Java 버전, 서버용 ZIP URL을 입력합니다.
+5. `설치` 버튼을 눌러 서버 파일을 구성합니다.
+6. 설치가 완료되면 `서버 실행` 버튼으로 서버를 시작합니다.
+
+---
+
+## 주의사항
+
+- 반드시 **서버용 모드팩 ZIP URL**을 사용해야 합니다.
+- 클라이언트용 모드팩 ZIP을 사용하면 서버가 정상 실행되지 않을 수 있습니다.
+- 이 프로그램은 **신규 설치 전용**입니다.
+- 기존 서버 폴더에 파일이 있으면 설치가 중단됩니다.
+- 외부 접속을 위해서는 공유기 포트포워딩이 별도로 필요할 수 있습니다.
+- 방화벽 규칙 추가 기능은 관리자 권한이 필요할 수 있습니다.
 
 ---
 
 ## 폴더 구조
 
-프로그램은 아래와 같은 폴더 구조를 사용합니다.
+프로그램 실행 후 아래 폴더들이 자동으로 생성됩니다.
 
 ```text
-MinecraftModpackLauncher/
-├─ MinecraftT2Launcher.exe
-├─ Assets/
-│  └─ t2_hosting_banner_1244x70.png
-├─ runtimes/
-│  ├─ java8/
-│  ├─ java17/
-│  ├─ java21/
-│  └─ java25/
-├─ servers/
+T2ModLauncher/
+├─ T2ModLauncher.exe
+├─ server/
 ├─ downloads/
+├─ runtimes/
 ├─ config/
 └─ logs/
