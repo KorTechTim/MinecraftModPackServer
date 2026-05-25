@@ -56,3 +56,12 @@ T2ModLauncher/
 ├─ runtimes/
 ├─ config/
 └─ logs/
+
+| 폴더          | 설명                      |
+| ----------- | ----------------------- |
+| `server`    | 모드팩 서버 파일 설치 위치         |
+| `downloads` | Java 및 모드팩 ZIP 다운로드 위치  |
+| `runtimes`  | 자동 다운로드된 Java 런타임 저장 위치 |
+| `config`    | 프로그램 설정 저장 위치           |
+| `logs`      | 로그 파일 저장 위치             |
+
